@@ -1,0 +1,45 @@
+container@pterodactyl~ Server marked as offline...
+[Pterodactyl Daemon]: ---------- Detected server process in a crashed state! ----------
+[Pterodactyl Daemon]: Exit code: 1
+[Pterodactyl Daemon]: Out of memory: false
+[Pterodactyl Daemon]: Checking server disk space usage, this could take a few seconds...
+[Pterodactyl Daemon]: Updating process configuration files...
+[Pterodactyl Daemon]: Ensuring file permissions are set correctly, this could take a few seconds...
+container@pterodactyl~ Server marked as starting...
+[Pterodactyl Daemon]: Pulling Docker container image, this could take a few minutes to complete...
+[Pterodactyl Daemon]: Finished pulling Docker container image
+Python 3.11.15
+container~ if [[ -d .git ]] && [[ "${AUTO_UPDATE}" == "1" ]] && [ -n "${USERNAME}" ] && [ -n "${ACCESS_TOKEN}" ]; then git remote set-url origin "https://${USERNAME}:${ACCESS_TOKEN}@$(echo -e ${GIT_ADDRESS} | cut -d/ -f3-)"; if [ -n "${BRANCH}" ]; then git pull origin "${BRANCH}"; else git pull; fi; fi; if [ -n "${PY_PACKAGES}" ]; then pip install -U --prefix .local ${PY_PACKAGES}; fi; if [ -f "/home/container/${REQUIREMENTS_FILE}" ]; then pip install -U --prefix .local -r "${REQUIREMENTS_FILE}"; fi; /usr/local/bin/python "/home/container/${PY_FILE}"
+Requirement already satisfied: python-telegram-bot==21.3 in ./.local/lib/python3.11/site-packages (from -r requirements.txt (line 1)) (21.3)
+Requirement already satisfied: python-dotenv==1.0.0 in ./.local/lib/python3.11/site-packages (from -r requirements.txt (line 2)) (1.0.0)
+Requirement already satisfied: aiosqlite==0.19.0 in ./.local/lib/python3.11/site-packages (from -r requirements.txt (line 3)) (0.19.0)
+Requirement already satisfied: Jinja2==3.1.2 in ./.local/lib/python3.11/site-packages (from -r requirements.txt (line 4)) (3.1.2)
+Requirement already satisfied: APScheduler==3.10.1 in ./.local/lib/python3.11/site-packages (from -r requirements.txt (line 5)) (3.10.1)
+Requirement already satisfied: aiosmtplib==3.0.1 in ./.local/lib/python3.11/site-packages (from -r requirements.txt (line 6)) (3.0.1)
+Requirement already satisfied: bcrypt==4.1.2 in ./.local/lib/python3.11/site-packages (from -r requirements.txt (line 7)) (4.1.2)
+Requirement already satisfied: httpx~=0.27 in ./.local/lib/python3.11/site-packages (from python-telegram-bot==21.3->-r requirements.txt (line 1)) (0.28.1)
+Requirement already satisfied: MarkupSafe>=2.0 in ./.local/lib/python3.11/site-packages (from Jinja2==3.1.2->-r requirements.txt (line 4)) (3.0.3)
+Requirement already satisfied: setuptools>=0.7 in /usr/local/lib/python3.11/site-packages (from APScheduler==3.10.1->-r requirements.txt (line 5)) (79.0.1)
+Requirement already satisfied: six>=1.4.0 in ./.local/lib/python3.11/site-packages (from APScheduler==3.10.1->-r requirements.txt (line 5)) (1.17.0)
+Requirement already satisfied: pytz in ./.local/lib/python3.11/site-packages (from APScheduler==3.10.1->-r requirements.txt (line 5)) (2026.2)
+Requirement already satisfied: tzlocal!=3.*,>=2.0 in ./.local/lib/python3.11/site-packages (from APScheduler==3.10.1->-r requirements.txt (line 5)) (5.3.1)
+Requirement already satisfied: anyio in ./.local/lib/python3.11/site-packages (from httpx~=0.27->python-telegram-bot==21.3->-r requirements.txt (line 1)) (4.13.0)
+Requirement already satisfied: certifi in ./.local/lib/python3.11/site-packages (from httpx~=0.27->python-telegram-bot==21.3->-r requirements.txt (line 1)) (2026.5.20)
+Requirement already satisfied: httpcore==1.* in ./.local/lib/python3.11/site-packages (from httpx~=0.27->python-telegram-bot==21.3->-r requirements.txt (line 1)) (1.0.9)
+Requirement already satisfied: idna in ./.local/lib/python3.11/site-packages (from httpx~=0.27->python-telegram-bot==21.3->-r requirements.txt (line 1)) (3.18)
+Requirement already satisfied: h11>=0.16 in ./.local/lib/python3.11/site-packages (from httpcore==1.*->httpx~=0.27->python-telegram-bot==21.3->-r requirements.txt (line 1)) (0.16.0)
+Requirement already satisfied: typing_extensions>=4.5 in ./.local/lib/python3.11/site-packages (from anyio->httpx~=0.27->python-telegram-bot==21.3->-r requirements.txt (line 1)) (4.15.0)
+[notice] A new release of pip is available: 24.0 -> 26.1.2
+[notice] To update, run: pip install --upgrade pip
+Traceback (most recent call last):
+  File "/home/container/main.py", line 9, in <module>
+    from handlers.start import start_command, language_selection, main_menu, process_language, handle_registration
+  File "/home/container/handlers/start.py", line 65, in <module>
+    handle_registration = MessageHandler(filters.CONTACT | filters.TEXT & ~filters.COMMAND, _handle_reg_input)
+                                                                                            ^^^^^^^^^^^^^^^^^
+NameError: name '_handle_reg_input' is not defined
+container@pterodactyl~ Server marked as offline...
+[Pterodactyl Daemon]: ---------- Detected server process in a crashed state! ----------
+[Pterodactyl Daemon]: Exit code: 1
+[Pterodactyl Daemon]: Out of memory: false
+[Pterodactyl Daemon]: Aborting automatic restart, last crash occurred less than 60 seconds ago.
